@@ -1,11 +1,20 @@
 from setuptools import (setup, find_packages)
+from codecs import open  # To use a consistent encoding
+from os import path
+
+
+here = path.abspath(path.dirname(__file__))
+
+# Get the long description from the relevant file
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+    long_description = f.read()
+
 
 setup(
     name='vbox',
     version='0.2.5',
     description="VirtualBox CLI bindings",
-    long_description=open("README.rst").read(),
-
+    long_description=long_description,
     author="Ilja Orlovs",
     author_email="vywn@gryyf.fb".decode("rot13"),
     url='https://github.com/VRGhost/vbox',
