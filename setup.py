@@ -12,7 +12,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='vbox',
-    version='0.2.5',
+    version='9.9.9',
     description="VirtualBox CLI bindings",
     long_description=long_description,
     author="Ilja Orlovs",
