@@ -123,9 +123,8 @@ class GuestControl(NoKwargCmd):
         return self(*self.copyToFmt(args, kwargs))
 
     def execute(self, target, image, username, password, environment=None, timeout=None, arguments=None,
-        waitExit=None, waitStdout=None, waitStderr=None
-    ):
-        cmd = [target, "execute", "--image", image, "--username", username, "--password", password]
+                waitExit=None, waitStdout=None, waitStderr=None):
+        cmd = [target, "start", "--exe", image, "--username", username, "--password", password]
         kw = {}
 
         if environment:
@@ -135,7 +134,7 @@ class GuestControl(NoKwargCmd):
             kw["_timeout"] = float(timeout) / 1000 # python timeouts are maesured in seconds
 
         if waitExit:
-            cmd.append("--wait-exit")
+            cmd[1] = 'run'
         if waitStdout:
             cmd.append("--wait-stdout")
         if waitStderr:
