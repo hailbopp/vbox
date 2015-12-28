@@ -3,6 +3,7 @@
 .*
 *.sublime-workspace
 *.py?
+src/vbox.egg-info/
 /_tmp/*
 distribute*.tar.gz
 *.sqlite_db
