@@ -1,5 +1,5 @@
 from setuptools import (setup, find_packages)
-from codecs import open  # To use a consistent encoding
+from codecs import open, decode  # To use a consistent encoding
 from os import path
 
 
@@ -16,7 +16,7 @@ setup(
     description="VirtualBox CLI bindings",
     long_description=long_description,
     author="Ilja Orlovs",
-    author_email="vywn@gryyf.fb".decode("rot13"),
+    author_email=decode("vywn@gryyf.fb", "rot13"),
     url='https://github.com/VRGhost/vbox',
     packages=find_packages('src', exclude=['tests']),
     package_dir={'': 'src'},
